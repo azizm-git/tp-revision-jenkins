@@ -1,0 +1,8 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.isoset</groupId>
+  <artifactId>tp-revision</artifactId>
+  <version>1.0</version>
+  <packaging>war</packaging>
+  <name>TP Revision Jenkins</name>
+</project>

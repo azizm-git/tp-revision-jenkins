@@ -1,0 +1,16 @@
+---
+- name: Deploy TP Revision
+  hosts: all
+  become: yes
+  tasks:
+    - name: Installer Docker si absent
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Lancer le conteneur
+      shell: |
+        docker stop tp-revision 2>/dev/null || true
+        docker rm tp-revision 2>/dev/null || true
+        docker run -d --name tp-revision -p 8080:8080 azizmjd/tp-revision:latest
