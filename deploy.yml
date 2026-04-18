@@ -3,12 +3,6 @@
   hosts: all
   become: yes
   tasks:
-    - name: Installer Docker si absent
-      apt:
-        name: docker.io
-        state: present
-        update_cache: yes
-
     - name: Lancer le conteneur
       shell: |
         docker stop tp-revision 2>/dev/null || true
